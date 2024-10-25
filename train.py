@@ -26,8 +26,8 @@ class SaveBestModelCallback(TrainerCallback):
             eval_loss = evaluation_results["eval_loss"]
 
             if eval_loss < self.best_loss:
-                # model.save_pretrained(args.output_dir)
-                # tokenizer.save_pretrained(args.output_dir)
+                model.save_pretrained(args.output_dir)
+                tokenizer.save_pretrained(args.output_dir)
                 self.best_loss = eval_loss
 
                 if "wandb" in args.report_to:
