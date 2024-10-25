@@ -1,0 +1,12 @@
+CUDA_VISIBLE_DEVICES=3 python main.py \
+  --model_name_or_path codellama/CodeLlama-7b-hf \
+  --dataset codealpaca \
+  --tuning_method lora \
+  --num_epochs 5 \
+  --batch_size 4 \
+  --gradient_accumulation_steps 2 \
+  --learning_rate 3e-4 \
+  --lora_r 8 \
+  --lora_alpha 16 \
+  --do_train \
+  --use_wandb
